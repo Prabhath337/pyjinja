@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scal=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.js"></script>
+	<title>{{title}}</title>
+	</head>
+<body>
+	<div class="container">
+		<h1 style="text-align:center;">{{header}}</h1>
+		<table class="table table-hover well">
+			<th class="text-primary well">Project Name</th>
+			<th class="text-primary well">Test Cases Count</th>
+			<th class="text-primary well">Passed</th>
+			<th class="text-primary well">Failed</th>
+			<th class="text-primary well">Pass(%)</th>
+			<tr class="info alert-info">
+			{%for it in range(0,5)%}
+			<td>{{statusdet[it]}}</td>
+		</div>
+		{%endfor%}
+	</tr>
+		</table>
+	</br></br>
+	<table class="table table-hover well">
+		<th class="text-primary well">TestCase Name</th>
+		<th class="text-primary well">Expected</th>
+		<th class="text-primary well">Actual</th>
+		<th class="text-primary well">Status</th>
+		{% for d,v in td.items()%}
+		{% if v[3]=="Fail" %}
+		<tr class="danger well alert-danger">
+		{%else%}
+		<tr class="success well alert-success">
+		{% endif %}
+		{%for m in range(0,v|length)%}
+		<td class="success well">{{v[m]}}</td>
+		{% endfor %}
+		</tr>
+		{% endfor %}
+		</table>
+</body>
+</html>

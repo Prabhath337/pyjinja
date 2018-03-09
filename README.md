@@ -1,2 +1,2 @@
 # pyjinja
-Generate custom html using jinja template and bootstrap
+Generate custom html reports using jinja template and bootstrap
